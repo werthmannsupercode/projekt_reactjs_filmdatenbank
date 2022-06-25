@@ -1,38 +1,576 @@
-.App {
-  text-align: center;
+/* ============================================
+                RESOURCES
+============================================ */
+
+/* Fonts */
+
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Roboto:wght@100;300;400;500&display=swap");
+
+/* 
+font-family: 'Anton', sans-serif;
+font-family: 'Roboto', sans-serif;
+*/
+
+/* Colors */
+
+/* 
+NavbarBackground: #1A2634
+SearchInputBackground: #24323F
+Accents, SearchIcon, Rating: #21E18C
+MainBackground: rgb(39, 50,62)
+*/
+
+/* ============================================
+                GENERAL
+============================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html {
+    font-size: 62.5%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h1 {
+    font-family: "Anton", sans-serif;
+    color: #fff;
+    font-weight: 400;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+h2 {
+    font-family: "Anton", sans-serif;
+    color: #fff;
 }
 
-.App-link {
-  color: #61dafb;
+h3 {
+    font-family: "Anton", sans-serif;
+    color: #fff;
+    font-weight: 300;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+h3 {
+    font-family: "Anton", sans-serif;
+    color: #fff;
+    font-weight: 300;
+}
+
+p {
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-size: 1.5rem;
+    color: white;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+    font-size: 1.6rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+    font-size: 1.6rem;
+}
+
+/* ============================================
+                HEADER
+============================================ */
+
+.navigation {
+    display: flex;
+    align-items: center;
+    background: #1a2634;
+    height: 20vh;
+    padding: 4%;
+}
+
+.headerLink {
+    text-decoration: none;
+    font-size: 2.5rem;
+}
+
+.navigation h1 span {
+    color: #21e18c;
+}
+
+.navigation div {
+    margin: 0 25%;
+}
+
+.navigation div input {
+    background: #24323f;
+    border: none;
+    padding: 20px 100px;
+    border-radius: 30px;
+    font-family: "Roboto", sans-serif;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.navigation div input[type="text"] {
+    font-size: 2rem;
+    color: white;
+    font-family: "Roboto", sans-serif;
+}
+
+.navigation div input[type="text"] {
+    font-size: 2rem;
+    color: white;
+    font-family: "Roboto", sans-serif;
+}
+
+.navigation div input::placeholder {
+    font-size: 2rem;
+}
+
+.searchbar {
+    position: relative;
+}
+
+.glass {
+    font-size: 3rem;
+    color: #21e18c;
+    position: absolute;
+    left: 15px;
+    top: 25%;
+}
+
+/* ============================================
+                    MAIN
+============================================ */
+
+.main {
+    background: rgb(39, 50, 62);
+    /* padding: 4%; */
+}
+
+.main h1 {
+    font-size: 3.5rem;
+    margin: 5vh 0 4vh 4%;
+    padding-top: 5vh;
+}
+
+.movie-list {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-column-gap: 5px;
+    grid-row-gap: 5px;
+    padding: 4%;
+}
+
+.hideVideo {
+    display: none;
+}
+
+/* ============================================
+                MAIN/MovieCard
+============================================ */
+.moviecard {
+    width: 90%;
+}
+
+.moviecard img {
+    width: 100%;
+}
+
+.moviecard h2 {
+    font-size: 2rem;
+    font-weight: 300;
+}
+
+.placeholderimg {
+    height: 50vh;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* ============================================
+                    Footer
+============================================ */
+
+.footer {
+    padding: 3%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #1a2634;
+    height: 20vh;
+}
+
+.footer h1 {
+    font-size: 5rem;
+    /* margin-right: 10vw; */
+}
+
+.footer p {
+    /* margin-right: 15vw; */
+    font-size: 2rem;
+    font-weight: 300;
+}
+
+.footer h1 span {
+    color: #21e18c;
+}
+
+.footer div a:last-of-type {
+    color: rgb(39, 50, 62);
+}
+
+.insta {
+    font-size: 6rem;
+    color: #21e18c;
+    margin-right: 30px;
+}
+
+.fbook {
+    font-size: 5rem;
+    border: 1px 1px 0 1px solid #21e18c;
+    background-color: #21e18c;
+    border-radius: 5px;
+    padding: 5px 10px 0 10px;
+}
+
+.tmdbpic {
+    width: 75px;
+}
+
+.ImprintLnk:hover {
+    color: #21e18c;
+    font-weight: 500;
+}
+
+/* ============================================
+                DetailSite
+============================================ */
+
+.detailSite {
+    background: rgb(39, 50, 62);
+    padding: 4%;
+    color: white;
+}
+
+.detailSite h2 {
+    font-size: 4rem;
+    margin-bottom: 5vh;
+}
+
+.detailImg img {
+    margin-right: 5vw;
+}
+
+.grid-movielist {
+    display: grid;
+    grid-template-columns: 0.6fr 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    align-items: center;
+}
+
+.grid-movielist div {
+    margin-bottom: 10px;
+}
+
+.releaseDate {
+    grid-area: 1 / 1 / 2 / 2;
+}
+
+.releaseDateDetails {
+    grid-area: 1 / 2 / 2 / 3;
+}
+
+.genre {
+    grid-area: 2 / 1 / 3 / 2;
+}
+
+.genreDetails {
+    grid-area: 2 / 2 / 3 / 3;
+}
+
+.originalTitle {
+    grid-area: 3 / 1 / 4 / 2;
+}
+
+.originalTitleDetails {
+    grid-area: 3 / 2 / 4 / 3;
+}
+
+.overView {
+    grid-area: 4 / 1 / 5 / 2;
+}
+
+.overViewDetails {
+    grid-area: 4 / 2 / 5 / 3;
+}
+
+.rating {
+    grid-area: 5 / 1 / 6 / 2;
+}
+
+.ratingDetails {
+    grid-area: 5 / 2 / 6 / 3;
+}
+
+.voteAverage {
+    color: #21e18c;
+    font-size: 2.2rem;
+    font-weight: 700;
+}
+
+.detailWrapper {
+    display: flex;
+}
+
+.detailImg {
+    margin-right: 5vw;
+}
+
+.description h3 {
+    font-size: 2.5rem;
+}
+
+.description p {
+    font-size: 1.6rem;
+    display: inline;
+}
+
+.link {
+    color: white;
+    font-size: 2rem;
+}
+
+.linkContainer {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.detailSite .link:hover {
+    color: #21e18c;
+}
+
+.gridPhone {
+    display: none;
+}
+
+/* ============================================
+                Landingpage
+============================================ */
+.landingpage {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #000;
+}
+
+/* ============================================
+                BurgerMenu
+============================================ */
+
+#page-wrap {
+    background: #1a2634;
+}
+
+/* ============================================
+                Imprint
+============================================ */
+
+.Imprint {
+    background: rgb(39, 50, 62);
+    text-align: center;
+    padding: 8vh 0;
+    /* height: 60vh; */
+}
+
+.ImprintHeadline {
+    font-size: 3rem;
+}
+
+.teamHeadline {
+    padding: 2vh 0;
+    font-size: 2rem;
+}
+
+.Team {
+    display: flex;
+    justify-content: space-between;
+    margin: 2vh 20vw;
+}
+
+.Team div p:first-of-type {
+    color: #21e18c;
+    font-size: 2rem;
+    font-weight: 500;
+    font-family: "Anton", sans-serif;
+}
+
+.icontechnologies {
+    color: #21e18c;
+    font-size: 5rem;
+    padding: 2vh 2vw;
+}
+
+.imprinttext {
+    padding-top: 2vh;
+}
+
+/* ============================================
+                Media Queries
+============================================ */
+
+@media only screen and (min-width: 100px) and (max-width: 580px) {
+    /* ============================================
+                HEADER
+    ============================================ */
+
+    .navigation {
+        display: block;
+    }
+
+    .headerLink {
+        text-align: center;
+    }
+
+    .searchbar {
+        position: relative;
+        margin: 0 auto;
+        left: -8vw;
+    }
+
+    .navigation div input {
+        background: #24323f;
+        border: none;
+        margin: 25px 0 0 0;
+        padding: 1.5vh 5vw;
+        border-radius: 30px;
+        font-family: "Roboto", sans-serif;
+        text-align: center;
+        font-size: 1rem;
+        margin-top: 20px;
+    }
+
+    .glass {
+        font-size: 2rem;
+        color: #21e18c;
+        position: absolute;
+        left: 15px;
+        top: 52%;
+    }
+
+    /* ============================================
+                    Main
+    ============================================ */
+
+    #outer-container,
+    #page-wrap {
+        overflow: hidden;
+    }
+
+    .main {
+        text-align: center;
+    }
+
+    .movie-list {
+        display: block;
+    }
+
+    .moviecard {
+        width: 100%;
+    }
+
+    .moviecard h2 {
+        font-size: 3.5rem;
+    }
+
+    .moviecard p {
+        font-size: 3rem;
+        margin-bottom: 20px;
+    }
+
+    .moviecard img {
+        object-fit: contain;
+        object-position: center;
+    }
+
+    /* ============================================
+                    Footer
+    ============================================ */
+
+    .footer {
+        display: block;
+        text-align: center;
+        height: 100%;
+    }
+
+    .footer h1 {
+        margin: 0;
+    }
+
+    .footer p {
+        margin: 0;
+    }
+
+    .insta {
+        margin: 10px 15px 0 0;
+    }
+
+    .tmdblogo {
+        margin: 30px auto 20px auto;
+        width: 40%;
+        display: block;
+        text-align: center;
+    }
+
+    /* ============================================
+                DetailSite
+    ============================================ */
+
+    .detailSite {
+        padding: 4%;
+        text-align: center;
+        overflow: hidden;
+    }
+
+    .detailSite h2 {
+        font-size: 3.5rem;
+        margin-bottom: 2vh;
+    }
+
+    .detailWrapper {
+        display: none;
+    }
+
+    .gridPhone {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+    }
+
+    .gridPhone img {
+        width: 100%;
+    }
+
+    .gridPhone h3 {
+        font-size: 3rem;
+        margin-bottom: 10px;
+    }
+
+    /* ============================================
+                Imprint
+============================================ */
+
+    .Team {
+        flex-direction: column;
+    }
+
 }

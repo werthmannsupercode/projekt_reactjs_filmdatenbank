@@ -1,0 +1,73 @@
+.bm-burger-button {
+    position: absolute;
+    width: 36px;
+    height: 30px;
+    left: 90vw;
+    top: 60px;
+}
+
+.bm-burger-bars {
+    background: #21e18c;
+}
+
+.bm-buger-bars-hover {
+    color: #21e18b5b;
+}
+
+.bm-cross-button {
+    height: 24px;
+    width: 24px;
+}
+
+.bm-cross {
+    background: #1a2634;
+}
+
+.bm-menu-wrap {
+    position: fixed;
+    height: 100%;
+}
+
+.bm-menu {
+    background: #1a2634;
+    padding: 20px 70px 0 40px;
+    font-size: 2rem;
+}
+
+.bm-morph-shape {
+    fill: #21e18c;
+}
+
+.bm-item-list {
+    color: #b8b7ad;
+    padding: 0.8em;
+}
+
+.bm-item {
+    display: inline-block;
+    color: #d1d1d1;
+    margin-bottom: 25px;
+    text-align: left;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.bm-item:hover {
+    color: #21e18c;
+}
+
+.bm-overlay {
+    background: rgba(0, 0, 0, 1);
+}
+
+/* ============================================
+                  Media Queries
+  ============================================ */
+
+@media only screen and (min-width: 100px) and (max-width: 580px) {
+    .bm-burger-button {
+        position: absolute;
+        top: 38px;
+        left: 87vw;
+    }
+}
